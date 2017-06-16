@@ -28,8 +28,25 @@ public class BlankFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         rv.setHasFixedSize(true);
-        MyAdapter adapter = new MyAdapter(new String[]{"Example One", "Example Two", "Example Three", "Example Four", "Example Five" , "Example Six" , "Example Seven"});
-        rv.setAdapter(adapter);
+        MyAdapter adapter = new MyAdapter(new String[]
+                {"Example One", "Example Two", "Example Three", "Example Four", "Example Five" , "Example Six" , "Example Seven"},
+                new int[]   // this card_image
+                        {R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher,
+                                R.mipmap.ic_launcher,
+                        R.mipmap.ic_launcher},
+                new String[]    // this card_title
+                        {"Mexico",
+                                "France",
+                                "SF",
+                                "Chicago",
+                                "LA",
+                                "GA",
+                        "BA"});
+                rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
